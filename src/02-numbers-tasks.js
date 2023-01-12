@@ -52,8 +52,12 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  if (value1 === Number.MAX_VALUE || value2 === Number.MAX_VALUE) {
+    return (value1 / 2) + (value2 / 2) + (((value1 % 2) + (value2 % 2)) / 2);
+  }
+  return (value1 + value2) / 2;
+  /* throw new Error('Not implemented'); */
 }
 
 /**
@@ -111,8 +115,13 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const amod = Math.sqrt(x1 * x1 + y1 * y1);
+  const bmod = Math.sqrt(x2 * x2 + y2 * y2);
+  const ab = x1 * x2 + y1 * y2;
+  return Math.acos(ab / (amod * bmod));
+
+  /* throw new Error('Not implemented'); */
 }
 
 /**
